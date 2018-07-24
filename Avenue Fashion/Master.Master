@@ -1,0 +1,259 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Avenue_Fashion.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="titleContent" runat="server">
+            AVENUE FASHION
+        </asp:ContentPlaceHolder>
+    </title>
+        <style>
+            .wrapper{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .margin{
+                margin-left: auto;
+                margin-right:auto;
+            }
+            .form-signin {
+                max-width: 380px;
+                padding: 15px 35px 45px;
+                margin: 0 auto;
+                background-color: #fff;
+                border: 1px solid rgba(0,0,0,0.1);
+            }
+            .form-signin-heading,
+	        .checkbox {
+	            margin-bottom: 15px;
+	        }
+
+	        .checkbox {
+	            font-weight: normal;
+	        }
+
+            .form-control {
+                position: relative;
+                font-size: 16px;
+                height: auto;
+                padding: 10px;
+	        }
+
+	        input[type="text"] {
+	            margin-bottom: -1px;
+	            border-bottom-left-radius: 0;
+	            border-bottom-right-radius: 0;
+	        }
+
+	        input[type="password"] {
+	            margin-bottom: 20px;
+	            border-top-left-radius: 0;
+	            border-top-right-radius: 0;
+	        }
+            .font-small{
+                font-size:10pt;
+            }
+            .font-color{
+                color: gray;
+            }
+        </style>
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css " />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
+</head>
+<body>
+    <form id="formAvenue" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a class="navbar-brand font-weight-bold" href="Default.aspx">
+                    <i class="fa fa-home"> AVENUE FASHION</i>
+                </a>
+                <div class="navbar-collapse justify-content-end">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Currency: <i class="fa fa-usd"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="SignUp.aspx"><i class="fa fa-sign-in"> Sign In/ </i><i class="fa fa-user-plus"> Register</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UserCart.aspx"><i class="fa fa-shopping-cart"> Cart</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <asp:Button runat="server" ID="AdminBtn" CssClass="btn nav-link btn-dark" Text="Admin" Visible="True" OnClick="AdminBtn_Click" />
+                        </li>
+                        <li class="nav-item">
+                            <asp:Button runat="server" ID="LogoutBtn" CssClass="btn nav-link btn-dark" Text="Log Out" Visible="True" OnClick="LogoutBtn_Click" />
+                        </li>
+                        <li class="nav-item">
+                            <asp:Label ID="SessionLabel" runat="server" Text="" CssClass="nav-link"></asp:Label>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Product.aspx"> PRODUCT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="TheBrand.aspx"> THE BRAND</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="LocalStores.aspx"> LOCAL STORES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Lookbook.aspx"> LOOK BOOK</a>
+                        </li>
+                        <li class="nav-item">
+                            <input type="text" placeholder="Search..." class="form-control" id="itemText"/>
+                        </li>
+                        <li class="nav-item">
+                            <asp:Button CssClass="btn btn-block btn-primary btn-light" runat="server" id="itemSearch" Text="SEARCH"/>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+            
+            <div style="background-color:#F8F8F8 !important">
+                <div class="container">
+                    <div class="jumbotron" style="background-color:transparent !important">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="font-weight-bold font-small">INFORMATION</h6>
+                                <ul class="navbar-nav font-small font-color">
+                                    <li class="nav-item"><a href="TheBrand.aspx" style="color: slategrey;">The Brand</a></li>
+                                    <li class="nav-item"><a href="LocalStores.aspx" style="color: slategrey;">Local Stores</a></li>
+                                    <li class="nav-item"><a href="Product.aspx" style="color: slategrey;">Customer Service</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Privacy & Cookies</a></li>
+                                    <li class="nav-item"><a href="LocalStores.aspx" style="color: slategrey;">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6 class="font-weight-bold font-small">WHY BUY FROM US</h6>
+                                <ul class="navbar-nav font-small font-color">
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Shipping Returns</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Secure Shopping</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Testimonials</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Award Winning</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Ethical Trading</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6 class="font-weight-bold font-small">YOUR ACCOUNT</h6>
+                                <ul class="navbar-nav font-small">
+                                    <li class="nav-item"><a href="SignUp.aspx" style="color: slategrey;">Sign In</a></li>
+                                    <li class="nav-item"><a href="SignUp.aspx" style="color: slategrey;">Register</a></li>
+                                    <li class="nav-item"><a href="UserCart.aspx" style="color: slategrey;">View Cart</a></li>
+                                    <li class="nav-item"><a href="Lookbook.aspx" style="color: slategrey;">View your lookbook</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Track an order</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Update information</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6 class="font-weight-bold font-small">LOOK BOOK</h6>
+                                <ul class="navbar-nav font-small">
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Latest posts</a></li>
+                                    <li class="nav-item"><a href="Lookbook.aspx" style="color: slategrey;">Men's lookbook</a></li>
+                                    <li class="nav-item"><a href="Lookbook.aspx" style="color: slategrey;">Women's lookbook</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Lookbooks RSS feed</a></li>
+                                    <li class="nav-item"><a href="Lookbook.aspx" style="color: slategrey;">View your lookbook</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Delete your lookbook</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h6 class="font-weight-bold font-small">CONTACT DETAILS</h6>
+                                <ul class="navbar-nav font-small">
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Head Office: Avenue Fashion, 180-182 Regent Street, London</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Telephone: 0123-456-789</a></li>
+                                    <li class="nav-item"><a href="#" style="color: slategrey;">Email: sauravpandey1212@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row font-color justify-content-center">
+                        <div class="col">
+                            <div class="jumbotron" style="background-color:#343a40 !important;">
+                                <h1 class="font-weight-bold text-white text-center">
+                                    AWARD WINNER
+                                </h1>
+                                <h3 class="font-weight-light text-white text-center">
+                                    FASHION AWARDS 2016
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="jumbotron" style="background-color: #0069d9 !important;">
+                                <div class="align-content-center text-center">
+                                    <a href="https://twitter.com/" target="_blank" title="Twitter">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-twitter fa-stack text-white"></i>
+                                        </span>
+                                    </a>
+                                    <a href="https://www.youtube.com/" target="_blank" title="YouTube">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-youtube fa-stack text-white"></i>
+                                        </span>
+                                    </a>
+                                    <a href="https://github.com/" target="_blank" title="GitHub">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-github fa-stack text-white"></i>
+                                        </span>
+                                    </a>
+                                    <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-facebook fa-stack text-white"></i>
+                                        </span>
+                                    </a>
+                                    <a href="https://www.pinterest.com/" target="_blank" title="Pinterest" class=" margin">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-pinterest fa-stack text-white"></i>
+                                        </span>
+                                    </a>
+                                    <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-instagram fa-stack text-white"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div class="navbar-collapse justify-content-center">
+                    <ul class="navbar-nav font-small">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">&copy; 2018 Avenue Fashion <sup>TM</sup></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Design by bivishanDesigns.com</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dev by pandey.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </form>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+</body>
+</html>
